@@ -1,0 +1,10 @@
+.nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    padding-left: 2%;
+}
