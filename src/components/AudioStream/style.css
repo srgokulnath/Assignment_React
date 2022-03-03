@@ -1,0 +1,17 @@
+.rec-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: red;
+    margin: 20px;
+}
+
+.pause-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: green;
+    margin: 20px;
+}
