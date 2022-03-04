@@ -1,5 +1,5 @@
 .home {
-    height: 100vh;
+    height: calc(100vh - 70px);
 }
 
 .contents {
@@ -11,9 +11,10 @@
 
 .audio-card {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     cursor: pointer;
 }

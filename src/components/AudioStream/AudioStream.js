@@ -1,26 +1,16 @@
 import React, { useState } from "react";
 import "./style.css";
 import { useReactMediaRecorder } from "react-media-recorder";
-import { Button, Box, IconButton } from '@mui/material'
+import { Box, IconButton } from '@mui/material'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import StopIcon from '@mui/icons-material/Stop';
+import MicIcon from '@mui/icons-material/Mic';
+import StopCircleIcon from '@mui/icons-material/StopCircle';
 
 function AudioStream() {
   const [play, setPlay] = useState(false)
-  const { status, startRecording, stopRecording, mediaBlobUrl } =
-    useReactMediaRecorder({ audio: true });
+  const { status, startRecording, stopRecording, mediaBlobUrl } = useReactMediaRecorder({ audio: true });
 
-  const downloadAudioFile = () => {
-    const element = document.createElement("a");
-    console.log(mediaBlobUrl);
-    const file = new Blob([mediaBlobUrl], {
-      type: "audio/mp3",
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "myFile.wav";
-    document.body.appendChild(element);
-    element.click();
-  };
 
   const handleClick = () => {
     const recaudio = document.getElementById("rec-audio");
@@ -35,21 +25,25 @@ function AudioStream() {
       recaudio.play();
     }
   }
+
   return (
 
-    <Box>
+    <Box className="record">
       <audio id="rec-audio" src={mediaBlobUrl} ></audio>
-      {
-        status !== "recording" ? <Box className="rec-btn" onClick={startRecording} >
-
-        </Box> : <Box className="pause-btn" onClick={stopRecording} >
-
-        </Box>
-      }
-      <IconButton onClick={handleClick} >
-        {play ? <StopIcon style={{ color: "red" }} /> : <PlayArrowIcon />}
-      </IconButton>
-      <Button onClick={downloadAudioFile} >Download</Button>
+      <Box>
+        {
+          status !== "recording" ? <IconButton className="record-icon" onClick={startRecording}>
+            <MicIcon style={{ fontSize: "3rem", color: "red" }} />
+          </IconButton> : <IconButton className="record-icon" onClick={stopRecording}>
+            <StopCircleIcon style={{ fontSize: "3rem", color: "red" }} />
+          </IconButton>
+        }
+      </Box>
+      <Box style={{ margin: "30px 0" }}>
+        <IconButton style={{ backgroundColor: "#2D31FA" }} onClick={handleClick} >
+          {play ? <StopIcon style={{ color: "white" }} /> : <PlayArrowIcon style={{ color: "white" }} />}
+        </IconButton>
+      </Box>
     </Box>
   );
 }
