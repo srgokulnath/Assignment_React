@@ -10,15 +10,15 @@ function Home() {
       <Box className="contents">
         <Paper className='audio-card' style={{ backgroundColor: "#9ADCFF" }} onClick={() => { navigate("/textarea") }}>
 
-          <Typography>
-            Text Playground
+          <Typography style={{ fontWeight: "bold" }}>
+            Text Arena
           </Typography>
 
 
         </Paper>
-        <Paper className='audio-card' style={{ backgroundColor: "#9ADCFF" }} onClick={() => { navigate("/audiostream") }}>
+        <Paper className='audio-card' style={{ backgroundColor: "#9ADCFF" }} onClick={() => { navigate("/audio") }}>
 
-          <Typography>
+          <Typography style={{ fontWeight: "bold" }}>
             Audio Stream
           </Typography>
 

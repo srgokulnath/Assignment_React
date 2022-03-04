@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import Navbar from "../Navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Box, Button, Typography } from "@mui/material";
 
 function TextArea() {
 
-  const CHANGE_COLOR_INDEX = 10
+  const CHANGE_COLOR_INDEX = 10;
   const [text, setText] = useState("");
   const [blackText, setBlackText] = useState("text");
   const [redText, setRedText] = useState("red");
@@ -24,59 +23,29 @@ function TextArea() {
     element.download = "myFile.txt";
     document.body.appendChild(element);
     element.click();
+    element.remove();
   };
-
-  const handle = (e) => {
-    // const string = document.getElementById("imput").value;
-    // const len = string.length;
-
-    setText(e.target.value)    
-    
-  };
-
- 
 
   return (
-    <div>
-      <div className="text-areaBody">
-        <h1>Text Downloader</h1>
 
-        <div className="ts">
-          
-          
-          <div style={{maxWidth:"200px"}}>
-            <div style={{position: 'absolute', maxWidth:"400px"}}>
-              {blackText} 
-              <span  style={{color:'red', maxWidth:"200px"}}>{redText}</span>
-            </div>
-          </div>
-          
-          
-          
-
-
-          <div className="inputText">
-            <input
-            id="input"
-            className="input1"
-            onChange={handle}
-            value={text}      
-          
-
-          />
-          </div>
-          
-          
-        </div>
-
-        <div className="buttons">
-          <button onClick={downloadTxtFile} className="btn">
-            Download
-          </button>
-         
-        </div>
-      </div>
-    </div>
+    <Box className="text-area">
+      <Typography style={{ textAlign: "center", margin: "2% 0", fontWeight: "bold" }} variant="h5">
+        Text Downloader
+      </Typography>
+      <Box className="inputText">
+        <textarea
+          className="input"
+          onChange={(e) => { setText(e.target.value) }}
+        ></textarea>
+        <Box style={{ fontFamily: "sans-serif", letterSpacing: "1.1px", margin: "0", padding: "0", position: "absolute", width: '400px' }}>
+          {blackText}
+          <span style={{ color: 'red' }}>{redText}</span>
+        </Box>
+      </Box>
+      <Button style={{ margin: "2% 0" }} variant="contained" color="primary" onClick={downloadTxtFile} disableElevation>
+        Download Text
+      </Button>
+    </Box>
   );
 }
 
