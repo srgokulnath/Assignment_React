@@ -4,14 +4,14 @@ import { Box, Button, Typography } from "@mui/material";
 
 function TextArea() {
 
-  const CHANGE_COLOR_INDEX = 10;
+  const CHANGE_COLOR_INDEX = 50;
   const [text, setText] = useState("");
   const [blackText, setBlackText] = useState("text");
   const [redText, setRedText] = useState("red");
 
   useEffect(() => {
     setBlackText(text.substring(0, CHANGE_COLOR_INDEX));
-    setRedText(text.substring(CHANGE_COLOR_INDEX + 1));
+    setRedText(text.substring(CHANGE_COLOR_INDEX));
   }, [text]);
 
   const downloadTxtFile = () => {
