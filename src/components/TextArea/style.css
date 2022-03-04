@@ -1,66 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
-.text-areBody {
-  max-width: 700px;
-  width: 100%;
-  /* margin: auto; */
-  position: absolute;
-  height: 60vh;
+.text-area {
+  height: calc(100vh - 70px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.ts {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  margin-top: 15px;
-}
-
-.btn {
-  margin: 15px;
-  padding: 15px;
-  background-color: rgb(154, 220, 255);
-  border: 0.5px solid black;
-  border-radius: 12px;
-  width: 100px;
-  text-align: center;
-}
-
-h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3%;
-  margin-bottom: 2%;
-  text-align: center;
-}
-
-.input1 {
+.input {
   width: 400px;
   height: 200px;
-  margin-top: auto;
-  border: 2px solid black;
-  color: black;
-  font-size: 2.3vh;
-  font-family: "PT Sans", sans-serif;
   opacity: 0;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  z-index: 10;
+  letter-spacing: 1.1px;
+  resize: none;
 }
-.inputText{
+
+.input:focus {
+  outline: none;
+}
+
+.inputText {
   display: flex;
-  align-items: center;
   width: 400px;
   height: 200px;
   border: 2px solid black;
   position: relative;
-
-
+  overflow-wrap: break-word;
+  overflow: hidden;
+  border-radius: 5px;
 }
