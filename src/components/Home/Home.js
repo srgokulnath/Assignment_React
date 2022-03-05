@@ -10,7 +10,7 @@ function Home() {
   return (
     <Box className='home'>
       <Box className="contents">
-        <Paper className='audio-card' style={{ backgroundColor: "#2D31FA" }} onClick={() => { navigate("/textarea") }}>
+        <Paper elevation={4} className='audio-card' style={{ backgroundColor: "#2D31FA" }} onClick={() => { navigate("/textarea") }}>
           <TextSnippetIcon style={{ color: "white", fontSize: "3rem" }} />
           <Typography variant="h5" style={{ color: "white", fontWeight: "bold" }}>
             Text Arena
@@ -18,7 +18,7 @@ function Home() {
 
 
         </Paper>
-        <Paper className='audio-card' style={{ backgroundColor: "#2D31FA" }} onClick={() => { navigate("/audio") }}>
+        <Paper elevation={4} className='audio-card' style={{ backgroundColor: "#2D31FA" }} onClick={() => { navigate("/audio") }}>
           <GraphicEqIcon style={{ color: "white", fontSize: "3rem" }} />
           <Typography variant="h5" style={{ color: "white", fontWeight: "bold" }}>
             Audio Stream

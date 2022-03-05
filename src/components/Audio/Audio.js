@@ -1,4 +1,4 @@
-import { Box, Button, Paper, Typography, IconButton, Input } from '@mui/material'
+import { Box, Paper, Typography, IconButton, Input } from '@mui/material'
 import React, { useState } from 'react'
 import AudioStream from '../AudioStream/AudioStream';
 import './style.css'
@@ -42,14 +42,11 @@ function Audio() {
                     Upload Audio File
                 </Typography>
                 <Box className="upload-media">
-                    <Box style={{ cursor: "pointer", position: "relative" }}>
-
-                        <Input style={{ cursor: "pointer", position: "absolute", opacity: "0", zIndex: "9" }} disableUnderline variant="standard" type='file' onChange={handleAudioFile} >
-                            upload
-                        </Input>
-                        <Button variant="contained" disableElevation style={{ backgroundColor: "#2D31FA", cursor: "pointer", positon: "absolute" }} >
-                            Upload
-                        </Button>
+                    <Box style={{ position: "relative" }}>
+                        <label htmlFor='audio-upload' style={{ fontWeight: "500", padding: "5px 10px", color: "white", borderRadius: "5px", backgroundColor: "#2D31FA", cursor: "pointer" }} >
+                            Upload Audio
+                        </label>
+                        <Input id="audio-upload" style={{ display: "none" }} disableUnderline variant="standard" type='file' onChange={handleAudioFile} />
                     </Box>
                     <IconButton style={{ backgroundColor: "#2D31FA" }} className="play-btn" onClick={handleClick}>
                         {uploadplay ? <StopIcon style={{ color: "white" }} /> : <PlayArrowIcon style={{ color: "white" }} />}
