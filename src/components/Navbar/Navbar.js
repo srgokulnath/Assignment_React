@@ -7,10 +7,9 @@ function Navbar() {
     const navigate = useNavigate();
     return (
         <Paper elevation={3} className='nav'>
-            <Box style={{ cursor: "pointer" }} onClick={() => { navigate("/") }} className="logo">
-                Text and Audio Downloader
+            <Box style={{ cursor: "pointer", fontSize: "1.3rem" }} onClick={() => { navigate("/") }} className="logo">
+                Text Downloader and Audio Streamer
             </Box>
-
         </Paper>
     )
 }
