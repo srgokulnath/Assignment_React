@@ -44,7 +44,7 @@ function Audio() {
                 <Box className="upload-media">
                     <Box style={{ cursor: "pointer", position: "relative" }}>
 
-                        <Input style={{ cursor: "pointer", position: "absolute", opacity: "0", zIndex: "9" }} disableUnderline variant="standard" type='file' onChange={handleAudioFile} >
+                        <Input style={{ cursor: "pointer", position: "absolute", opacity: "0", zIndex: "0" }} disableUnderline variant="standard" type='file' onChange={handleAudioFile} >
                             upload
                         </Input>
                         <Button variant="contained" disableElevation style={{ backgroundColor: "#2D31FA", cursor: "pointer", positon: "absolute" }} >
