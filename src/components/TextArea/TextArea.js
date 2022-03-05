@@ -42,7 +42,7 @@ function TextArea() {
           <span style={{ color: 'red' }}>{redText}</span>
         </Box>
       </Box>
-      <Button style={{ margin: "2% 0" }} variant="contained" color="primary" onClick={downloadTxtFile} disableElevation>
+      <Button style={{ margin: "2% 0", backgroundColor: "#2D31FA" }} variant="contained" onClick={downloadTxtFile} disableElevation>
         Download Text
       </Button>
     </Box>

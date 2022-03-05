@@ -3,5 +3,31 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 70px);
+}
+
+.upload-audio {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.upload-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+}
+
+.record-audio {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
