@@ -9,9 +9,11 @@ import StopIcon from '@mui/icons-material/Stop';
 function Audio() {
     const [audioFile, setAudioFile] = useState("");
     const [uploadplay, setUploadPlay] = useState(false);
+    const [filename, setFilename] = useState("");
 
     const handleAudioFile = (e) => {
         const file = e.target.files[0];
+        setFilename(file.name)
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = () => {
@@ -47,7 +49,11 @@ function Audio() {
                             Upload Audio
                         </label>
                         <Input id="audio-upload" style={{ display: "none" }} disableUnderline variant="standard" type='file' onChange={handleAudioFile} />
+                        
                     </Box>
+                    {filename? <>
+                            <Typography style ={{margin:"2px 0"}}>{filename}</Typography>
+                        </>:null}
                     <IconButton style={{ backgroundColor: "#2D31FA" }} className="play-btn" onClick={handleClick}>
                         {uploadplay ? <StopIcon style={{ color: "white" }} /> : <PlayArrowIcon style={{ color: "white" }} />}
                     </IconButton>
