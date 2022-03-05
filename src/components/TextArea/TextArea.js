@@ -4,7 +4,7 @@ import { Box, Button, Typography } from "@mui/material";
 
 function TextArea() {
 
-  const CHANGE_COLOR_INDEX = 50;
+  const CHANGE_COLOR_INDEX = 100;
   const [text, setText] = useState("");
   const [blackText, setBlackText] = useState("text");
   const [redText, setRedText] = useState("red");
